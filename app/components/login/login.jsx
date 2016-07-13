@@ -8,31 +8,40 @@ export class Login extends Component {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      usernameFocused: false,
+      password: '',
+      passwordFocused: false
     }
 
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onSubmit(e) {
-    console.log('login submit', e);
+  onSubmit() {
     this.props.dispatch(initLogin(this.state.username, this.state.password));
   }
 
   render() {
     return (
       <div>
-        <label htmlFor="txt-username">Username</label>
-				<input ref="username" id="txt-username" name="username" type="text"
-          value={this.state.username}
-          onChange={(e) => this.setState({username: e.target.value})} />
+        <div className={!this.state.username && this.state.usernameFocused ? 'usa-input-error' : ''}>
+          <label htmlFor="txt-username">Username</label>
+          {!this.state.username && this.state.usernameFocused ?
+            <span className="usa-input-error-message" id="input-error-message" role="alert">Helpful error message</span>
+            : null}
+            <input ref="username" id="txt-username" name="username" type="text"
+            value={this.state.username.value}
+            onFocus={() => this.setState({usernameFocused: true})}
+            onChange={(e) => this.setState({username: e.target.value})} />
+        </div>
 
-        <label htmlFor="txt-password">Password</label>
-				<input id="txt-password" name="password" type="password"
-          value={this.state.password}
-          onChange={(e) => this.setState({password: e.target.value})} />
-
-        <button onClick={this.onSubmit}>Login</button>
+        <div className={!this.state.password && this.state.passwordFocused ? 'usa-input-error' : ''}>
+          <label htmlFor="txt-password">Password</label>
+          <input id="txt-password" name="password" type="password"
+            value={this.state.password.value}
+            onFocus={() => this.setState({passwordFocused: true})}
+            onChange={(e) => this.setState({password: e.target.value})} />
+        </div>
+      <button onClick={this.onSubmit}>Login</button>
       </div>
     );
   }
