@@ -41,7 +41,7 @@ export class StaffView extends Component {
             <AvailableAppointments date={this.state.date}/>
           </div>
           <div>
-            <button onClick="javascript:window.print();">Print</button>
+            <button onClick={() => window.print()}>Print</button>
           </div>
         </div>
 
