@@ -129,7 +129,7 @@ export default class AppointmentDetails extends Component {
 						<button className="usa-button-big">Save</button>
 					</div>
 					<div className="button_wrapper right">
-						<button className="usa-button-gray">Print</button> <button className="usa-button-gray">Delete</button>
+						<button className="usa-button-gray" onClick={this.printWindow}>Print</button> <button className="usa-button-gray">Delete</button>
 					</div>
 				</div>
 			</div>
