@@ -6,13 +6,15 @@ import thunkMiddleware from 'redux-thunk';
 import ErrorReducer from '../reducers/error-reducer';
 import ConfigReducer from '../reducers/config-reducer';
 import UserReducer from '../reducers/user-reducer';
+import AppointmentsReducer from '../reducers/appointments-reducer';
 import {configureApp} from '../actions/config-actions';
 
 //combine reducers
 const appReducers = combineReducers({
   error: ErrorReducer,
   config: ConfigReducer,
-  user: UserReducer
+  user: UserReducer,
+  appointments: AppointmentsReducer
 });
 
 //create redux logger
