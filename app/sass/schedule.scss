@@ -1,11 +1,29 @@
 @import "react-datepicker.min.css";
 
 .scheduleapt{
+	.schedule-step{
+		background: #efefef;
+    	padding-left: 1em;
+    	padding-bottom: 1em;
+	}
 	.calendar-icon{
 		vertical-align: middle;
-		margin-right:15px;
+		margin-left:5px;
 		display:inline-block;
+	}
+	.label{
+		margin-right:15px;
+	}
+
+	.usa-alert-info{
+		&.usa-alert{
+			background-position: 1rem 1.6rem;
 		}
+		background-size:2.2em;
+		.usa-alert-body{
+			padding-left:2em;
+		}
+	}
 	.appt-calendar{
 		*{
 			box-sizing: border-box;
@@ -26,7 +44,7 @@
 			float:left;
 			.apptSlotCol{
 				float:left;
-				width:50%;
+				width:100%;
 				transition: background-color 0.25s ease;
 				background-color:#4aa564;
 				color:#fff;
