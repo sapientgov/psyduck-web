@@ -41,7 +41,11 @@ export default class ScheduleApt extends Component {
 				</div>
 				<div className="usa-width-one-whole">
 					<h3>Schedule</h3>
-					
+					<div className="usa-alert usa-alert-info add-hmargin">
+						<div className="usa-alert-body">
+							<p className="usa-alert-text">There are no appointments available on the date you selected.</p>
+						</div>
+					</div>
 					
 				</div>
 				<div className="appt-calendar usa-width-one-whole add-hmargin wrap-border">
