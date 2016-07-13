@@ -4,8 +4,17 @@
 .wrap-border{
 	border:1px dotted $global_outline_color;
 }
+.wrap-solid-border{
+	border:2px solid $global_outline_color;
+}
 .wrap-padding{
 	padding:$element_margin;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
 }
 .clearfix {
   overflow: auto;

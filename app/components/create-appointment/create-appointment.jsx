@@ -17,12 +17,12 @@ class CreateAppointmentPage extends Component {
       phone: '',
       email: '',
       office: '',
-      staff: ''
+      staff: '',
+      err: ''
     };
   }
 
   handleChange(obj) {
-    console.log('VALID?' + this.modelIsValid());
     this.setState(obj, ()=>{
       console.log(this.state);
     });
@@ -33,19 +33,22 @@ class CreateAppointmentPage extends Component {
     if(!this.state.firstname
       || !this.state.lastname
       || !this.state.email
-      || !this.state.office
-      || !this.state.date
-      || !this.state.time
-      || !this.state.staff
+      // || !this.state.office
+      // || !this.state.date
+      // || !this.state.time
+      // || !this.state.staff
       || !this.state.phone ){
-        console.log('a field is missing');
-        return false;
+        return {err: 'One or more form fields have not been filled in.'};
+    }
+
+    //validate phone number length
+    if(this.state.phone.length < 10){
+      return {err: 'The phone number entered does not have 10 digits.'};
     }
 
     //validate email format
     if(this.state.email.indexOf('@') <= -1){
-      console.log('bad email');
-      return false;
+      return {err: 'The email address entered does not contain the @ symbol.'};
     }
     const alias = this.state.email.split('@')[0];
     const domain = this.state.email.split('@')[1];
@@ -53,20 +56,20 @@ class CreateAppointmentPage extends Component {
     const domain2 = domain.split('.')[1];
 
     if(alias.length < 3 || domain1.length < 3 || domain2.length < 3){
-      console.log('short email');
-      return false;
+      return {err: 'The email address entered is not long enough to be recognized.'};
     }
 
-    return true;
+    return {err: ''};
   }
 
   submitAppointment() {
-    if(this.modelIsValid()){
+    const errObj = this.modelIsValid();
+    if(errObj){
+      this.setState({err: errObj.err});
+    } else {
       console.log('Submitting!');
       //send state object to POST method
       this.props.dispatch(createAppointment(this.state));
-    } else {
-      console.log('ERROR!');//TODO
     }
   }
 
@@ -74,6 +77,15 @@ class CreateAppointmentPage extends Component {
     return (
       <div>
         <h3>Create an Appointment</h3>
+        {this.state.err ?
+          <div className="usa-alert usa-alert-error">
+            <div className="usa-alert-body">
+              <h3 className="usa-alert-heading">Oops!</h3>
+              <p className="usa-alert-text">{this.state.err}</p>
+            </div>
+          </div>
+        : null}
+
 
         <FormField id="input-firstname" formKey="firstname" label="First Name" validation="name" handleChange={this.handleChange.bind(this)} />
         <FormField id="input-lastname" formKey="lastname" label="Last Name" validation="name" handleChange={this.handleChange.bind(this)} />

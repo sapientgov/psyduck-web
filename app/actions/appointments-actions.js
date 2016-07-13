@@ -6,7 +6,7 @@ export function postAppointment() {
   return {type: POST_APPOINTMENT};
 }
 
-export function receivePostSuccess(responseJson) {
+export function receivePostSuccess() {
   return {
     type: RECEIVE_POST_SUCCESS,
     postOK: true
@@ -42,11 +42,13 @@ export function getAppointments(date/*, office*/) {
 
 export function createAppointment(data) {
   //use thunk middleware to be able to dispatch other actions from this one
-  return dispatch => {
+  return (dispatch, getState) => {
+    const endpoint = getState().config.settings.endpoint;
+
     //update state to mark fetch start
     dispatch(postAppointment());
 
-    var request = new Request('http://localhost:8081/appointments.json', {
+    var request = new Request(endpoint + 'appointments.json', {
       method: 'POST',
       mode: 'cors',
       headers: new Headers({
