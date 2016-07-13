@@ -1,5 +1,4 @@
 @import "react-datepicker.min.css";
-
 .scheduleapt{
 	.schedule-step{
 		background: #efefef;
@@ -33,6 +32,9 @@
 			p{
 				margin:.4em 15px;
 			}
+			&:last-child{
+				border-bottom: none;
+			}
 		}
 		width:100%;
 		.timecol{
@@ -49,9 +51,17 @@
 				background-color:#4aa564;
 				color:#fff;
 				cursor:pointer;
-				&:first-child{
-					border-right:1px solid #ccc;
+				&.no-fill{
+					background:none;
+					&:hover{
+						background:none;
+					}
+					p{
+						color:#000;
+						font-weight: bold;
+					}
 				}
+				
 				&:hover{
 					background-color:#2e8540;
 				}
