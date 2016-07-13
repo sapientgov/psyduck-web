@@ -9,6 +9,7 @@ import Uikit from './components/uikit';
 import ScheduleApt from './components/scheduleapt';
 import Login from './components/login/login';
 import StaffView from './components/staff-view/staff-view';
+import CreateAppointmentPage from './components/create-appointment/create-appointment';
 
 //root render
 ReactDOM.render(
@@ -18,5 +19,6 @@ ReactDOM.render(
       <Route path="scheduleapt" component={ScheduleApt}/>
       <Route path="login" component={Login}/>
       <Route path="staff" component={StaffView}/>
+      <Route path="createAppointment" component={CreateAppointmentPage}/>
     </Route>
 </Router>, document.getElementById('app'));
