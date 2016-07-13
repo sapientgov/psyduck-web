@@ -7,6 +7,8 @@ import { Router, Route, hashHistory } from 'react-router';
 import App from './components/app';
 import Uikit from './components/uikit';
 import ScheduleApt from './components/scheduleapt';
+import ScheduleConfirmation from './components/scheduleconfirmation';
+import AppointmentDetails from './components/appointmentdetails';
 import Login from './components/login/login';
 import StaffView from './components/staff-view/staff-view';
 import CreateAppointmentPage from './components/create-appointment/create-appointment';
@@ -16,6 +18,8 @@ ReactDOM.render(
     <Router history={hashHistory}>
     <Route path="/" component={App}>
       <Route path="uikit" component={Uikit}/>
+      <Route path="scheduleconfirmation" component={ScheduleConfirmation}/>
+      <Route path="appointmentdetails" component={AppointmentDetails} />
       <Route path="scheduleapt" component={ScheduleApt}/>
       <Route path="login" component={Login}/>
       <Route path="staff" component={StaffView}/>
