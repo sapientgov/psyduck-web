@@ -22,7 +22,8 @@ export class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div className="usa-grid">
+      <div className="usa-width-one-whole">
         <div className={!this.state.username && this.state.usernameFocused ? 'usa-input-error' : ''}>
           <label htmlFor="txt-username">Username</label>
           {!this.state.username && this.state.usernameFocused ?
@@ -44,7 +45,8 @@ export class Login extends Component {
             onBlur={() => this.setState({passwordFocused: true})}
             onChange={(e) => this.setState({password: e.target.value})} />
         </div>
-      <button onClick={this.onSubmit}>Login</button>
+        <button onClick={this.onSubmit}>Login</button>
+      </div>
       </div>
     );
   }

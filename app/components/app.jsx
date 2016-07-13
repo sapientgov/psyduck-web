@@ -33,7 +33,7 @@ export default class App extends Component {
       <Provider store={store}>
         <div className="app">
           <div className="usa-width-one-whole site-header">
-            <h1>Welcome to Psyduck</h1>
+            <h1>Welcome to USCIS</h1>
           </div>
           <main>
             {this.props.children}
