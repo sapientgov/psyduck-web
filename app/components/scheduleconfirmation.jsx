@@ -3,7 +3,13 @@ import '../sass/schedule.scss';
 import React, {Component} from 'react';
 
 export default class ScheduleConfirmation extends Component {
-	
+	constructor(props){
+		super(props);
+		this.printWindow = this.printWindow.bind(this);
+	}
+	printWindow(){
+		window.print();
+	}
   	render() {
 		return (
 			<div className="usa-grid scheduleapt">
@@ -84,7 +90,7 @@ export default class ScheduleConfirmation extends Component {
 				</div>
 				<div className="usa-width-one-whole add-hmargin">
 					<div className="button_wrapper">
-						<button className="usa-button-big">Edit</button> <button className="usa-button-big">Print</button> <button className="usa-button-big">Delete</button>
+						<button className="usa-button-big">Edit</button> <button className="usa-button-big" onClick={this.printWindow}>Print</button> <button className="usa-button-big">Delete</button>
 					</div>
 				</div>
 				
