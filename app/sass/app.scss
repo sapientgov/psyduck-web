@@ -20,6 +20,24 @@ a{
     display: flex
 }
 
+.back-link{
+	
+	margin:15px;
+	img{
+		vertical-align: middle;
+		margin-left:1em;
+	}
+	a{
+		color:#323a45;
+		font-size:.8em;
+		text-decoration: none;
+		&:visited{
+			color:inherit;
+		}
+	}
+	
+	
+}
 .site-header{
 	background: #112e51;
 	
@@ -31,6 +49,29 @@ a{
 		font-family: "Source Sans Pro";
 		font-weight: 400;
 		margin:0;
+	}
+}
+
+.section-header{
+	background:#e31c3d;
+	padding:1rem 3rem;
+	h2{
+		text-transform: uppercase;
+		font-size:1em;
+		font-family: "Source Sans Pro";
+		font-weight: 300;
+		margin:0;
+		color:#fff;
+	}
+	button{
+		margin:0;
+    	padding: 1rem;
+    	text-transform: uppercase;
+		font-family: "Source Sans Pro";
+		line-height: .6rem;
+    	font-size: .8em;
+    	font-weight: bold;
+    	margin-top:-3px;
 	}
 }
 nav {
