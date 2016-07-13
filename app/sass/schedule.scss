@@ -1,5 +1,10 @@
 @import "react-datepicker.min.css";
 .scheduleapt{
+	&.confirmation{
+		button{
+			margin-top:0;
+		}
+	}
 	.schedule-step{
 		background: #efefef;
     	padding-left: 1em;

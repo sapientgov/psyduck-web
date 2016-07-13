@@ -12,7 +12,7 @@ export default class ScheduleConfirmation extends Component {
 	}
   	render() {
 		return (
-			<div className="usa-grid scheduleapt">
+			<div className="usa-grid scheduleapt confirmation">
 				<h2>Appointment Confirmed</h2>
 				
 				<div className="usa-width-one-whole">
@@ -88,9 +88,12 @@ export default class ScheduleConfirmation extends Component {
 					</div>
 					
 				</div>
-				<div className="usa-width-one-whole add-hmargin">
-					<div className="button_wrapper">
-						<button className="usa-button-big">Edit</button> <button className="usa-button-big" onClick={this.printWindow}>Print</button> <button className="usa-button-big">Delete</button>
+				<div className="usa-width-one-whole add-hmargin clearfix">
+					<div className="button_wrapper left">
+						<button className="usa-button-big" onClick={this.printWindow}>Print</button>
+					</div>
+					<div className="button_wrapper right">
+						<button className="usa-button-gray">Edit</button> <button className="usa-button-gray">Delete</button>
 					</div>
 				</div>
 				
