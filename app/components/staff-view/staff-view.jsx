@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
+import {getAppointments} from '../../actions/appointments-actions';
 
 import AvailableAppointments from '../available-appointments/available-appointments';
 
@@ -9,12 +10,15 @@ export class StaffView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: moment()
+      date: '2016-07-13'
     }
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(date) {
-    this.setState({date})
+    const newDate = date.format('YYYY-MM-DD');
+    this.setState({date: newDate});
+    this.props.dispatch(getAppointments(newDate));
   }
 
   render() {
@@ -27,11 +31,14 @@ export class StaffView extends Component {
 					<span className="label">Select a different day:</span>
 					<DatePicker  placeholderText="Click to select a date" selected={moment(this.state.date, 'YYYY-MM-DD')}
             dateFormat="YYYY-MM-DD"
-            onChange={(date) => this.setState({date: date.format('YYYY-MM-DD')})} />
+            onChange={this.handleChange} />
           <img className="calendar-icon" src="/static-assets/calendar-icon24x24.png" />
 				</div>
         <div className="scheduleapt">
           <AvailableAppointments date={this.state.date}/>
+        </div>
+        <div>
+          <button onClick="javascript:window.print();">Print</button>
         </div>
       </div>
     );
