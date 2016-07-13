@@ -8,6 +8,7 @@ import ConfigReducer from '../reducers/config-reducer';
 import UserReducer from '../reducers/user-reducer';
 import AppointmentsReducer from '../reducers/appointments-reducer';
 import {configureApp} from '../actions/config-actions';
+import {hashHistory} from 'react-router';
 
 //combine reducers
 const appReducers = combineReducers({
@@ -35,7 +36,7 @@ export default class App extends Component {
       <Provider store={store}>
         <div className="app">
           <div className="usa-width-one-whole site-header">
-            <h1>Welcome to Psyduck</h1>
+            <h1>Welcome to USCIS<button className="usa-button-big right" onClick={() => hashHistory.push('/login')}>Staff Login</button></h1>
           </div>
           <main>
             {this.props.children}

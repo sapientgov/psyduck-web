@@ -10,10 +10,6 @@ export class AvailableAppointments extends Component {
     this.props.dispatch(getAppointments(this.props.date));
   }
 
-  componentWillReceiveProps() {
-    this.props.dispatch(getAppointments(this.props.date));
-  }
-
   render() {
     return (
       <div>
