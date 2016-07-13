@@ -1,0 +1,41 @@
+@import "react-datepicker.min.css";
+
+.scheduleapt{
+	.calendar-icon{
+		vertical-align: middle;
+		margin-right:15px;
+		display:inline-block;
+		}
+	.appt-calendar{
+		*{
+			box-sizing: border-box;
+		}
+		.aptCalRow{
+			border-bottom: 1px solid #ccc;
+			p{
+				margin:.4em 15px;
+			}
+		}
+		width:100%;
+		.timecol{
+			width:25%;
+			float:left;
+		}
+		.apptCol{
+			width:75%;
+			float:left;
+			.apptSlotCol{
+				float:left;
+				width:50%;
+				
+				background:#2e8540;
+				color:#fff;
+
+				&.filled{
+					background: #5b616b;
+					color:#aeb0b5;
+				}
+			}
+		}
+	}
+}
