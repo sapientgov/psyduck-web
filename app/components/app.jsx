@@ -6,7 +6,6 @@ import thunkMiddleware from 'redux-thunk';
 import ErrorReducer from '../reducers/error-reducer';
 import ConfigReducer from '../reducers/config-reducer';
 import UserReducer from '../reducers/user-reducer';
-import {Link} from 'react-router';
 import {configureApp} from '../actions/config-actions';
 
 //combine reducers
@@ -33,14 +32,9 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <div className="app">
-          <h1>Scheduler</h1>
-            <nav>
-              <ul>
-                <li><Link activeClassName="activeLink" to="/">Home</Link></li>
-                <li><Link className="mainNavLink" activeClassName="activeLink" to="/uikit">UI Kit</Link></li>
-                <li><Link className="mainNavLink" activeClassName="activeLink" to="/login">Login</Link></li>
-              </ul>
-            </nav>
+          <div className="usa-width-one-whole site-header">
+            <h1>Welcome to Psyduck</h1>
+          </div>
           <main>
             {this.props.children}
           </main>

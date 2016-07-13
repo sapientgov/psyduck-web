@@ -20,8 +20,18 @@ a{
     display: flex
 }
 
-#app{
-	padding:$page_topmargin $page_rightmargin $page_bottommargin $page_leftmargin;
+.site-header{
+	background: #112e51;
+	
+	padding:3rem;
+	color:#fff;
+	h1{
+		text-transform: uppercase;
+		font-size:1.4em;
+		font-family: "Source Sans Pro";
+		font-weight: 400;
+		margin:0;
+	}
 }
 nav {
 	border:1px dotted $global_outline_color;
