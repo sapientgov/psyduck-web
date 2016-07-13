@@ -36,7 +36,7 @@ export default class App extends Component {
       <Provider store={store}>
         <div className="app">
           <div className="usa-width-one-whole site-header">
-            <h1>Welcome to Psyduck<button className="usa-button-big right" onClick={() => hashHistory.push('/login')}>Staff Login</button></h1>
+            <h1>Welcome to USCIS<button className="usa-button-big right" onClick={() => hashHistory.push('/login')}>Staff Login</button></h1>
           </div>
           <main>
             {this.props.children}
