@@ -116,11 +116,11 @@ export default class ScheduleApt extends Component {
 						</div>
 						<div className="apptCol">
 							<div className="apptSlotCol">
-								<p>slot 1</p>
+								<p>select this spot</p>
 							</div>
 							
 							<div className="apptSlotCol">
-								<p>slot 1</p>
+								<p>select this spot</p>
 							</div>  
 						</div> 
 					</div>
