@@ -2,6 +2,7 @@ import {setAppConfig} from '../../actions/config-actions';
 import configReducer from '../config-reducer';
 
 jest.unmock('../config-reducer');
+jest.unmock('../../actions/config-actions');
 
 describe('config-reducer test', () => {
   it('has correct initial state', () => {
