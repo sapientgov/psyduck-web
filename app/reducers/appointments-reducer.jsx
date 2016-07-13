@@ -1,7 +1,7 @@
-import {RECEIVE_POST_SUCCESS} from '../actions/appointments-actions';
+import {RECEIVE_POST_SUCCESS, RECEIVE_APPOINTMENTS} from '../actions/appointments-actions';
 
 const initialState = {
-  appointments: [],
+  items: [],
   postOK: false
 };
 
@@ -11,6 +11,11 @@ export default function AppointmentsReducer (state = initialState, action = {}) 
     case RECEIVE_POST_SUCCESS:
       return Object.assign({}, state, {
         postOK: action.response
+      });
+
+    case RECEIVE_APPOINTMENTS:
+      return Object.assign({}, state, {
+        items: action.data
       });
 
     default:

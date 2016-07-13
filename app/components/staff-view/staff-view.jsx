@@ -10,7 +10,7 @@ export class StaffView extends Component {
         <p>Logged in as: {this.props.user}</p>
         <h3>Appointment Dashboard</h3>
         <div className="scheduleapt">
-          <AvailableAppointments />
+          <AvailableAppointments date="2016-07-12"/>
         </div>
       </div>
     );
