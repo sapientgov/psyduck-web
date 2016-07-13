@@ -5,7 +5,7 @@ export function postAppointment() {
   return {type: POST_APPOINTMENT};
 }
 
-export function receivePostSuccess(responseJson) {
+export function receivePostSuccess() {
   return {
     type: RECEIVE_POST_SUCCESS,
     postOK: true
