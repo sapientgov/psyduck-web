@@ -16,7 +16,7 @@ export default class ScheduleConfirmation extends Component {
 				<h2>Appointment Confirmed</h2>
 				
 				<div className="usa-width-one-whole">
-					<div className="appt-calendar usa-width-one-whole wrap-border">
+					<div className="appt-calendar usa-width-one-whole wrap-border add-hmargin">
 					<div className="aptCalRow clearfix">
 						<div className="timecol">
 							<p>Date</p>
@@ -44,7 +44,7 @@ export default class ScheduleConfirmation extends Component {
 						</div>
 						<div className="apptCol">
 							<div className="apptSlotCol no-fill">
-								<p>Washington, DC</p>
+								<p>1515 N Courthouse Rd. Suite 300 Washington, DC</p>
 							</div>
 						</div> 
 					</div>
@@ -80,14 +80,7 @@ export default class ScheduleConfirmation extends Component {
 					</div>
 				</div>
 				</div>
-				<div className="usa-width-one-whole">
-					<div className="usa-alert usa-alert-info add-hmargin">
-						<div className="usa-alert-body">
-							<p className="usa-alert-text">A copy of this confirmation has been sent to your email.</p>
-						</div>
-					</div>
-					
-				</div>
+				
 				<div className="usa-width-one-whole add-hmargin clearfix">
 					<div className="button_wrapper left">
 						<button className="usa-button-big" onClick={this.printWindow}>Print</button>
