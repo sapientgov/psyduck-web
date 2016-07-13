@@ -1,3 +1,4 @@
+import {hashHistory} from 'react-redux';
 export const POST_APPOINTMENT = 'POST_APPOINTMENT';
 export const RECEIVE_POST_SUCCESS = 'RECEIVE_POST_SUCCESS';
 export const RECEIVE_APPOINTMENTS = 'RECEIVE_APPOINTMENTS';
@@ -21,9 +22,9 @@ export function recieveAppointments(data) {
 }
 
 export function getAppointments(date/*, office*/) {
-  return (dispatch, getState) => {
+  return (dispatch/*, getState*/) => {
     //const endpoint = getState().config.settings.endpoint + 'appointments.json';
-    let endpoint = 'http://localhost:8081/appointments.json';
+    let endpoint = 'https://54.208.105.112/appointments.json';
     if(date) {
       endpoint += '?date=' + date;
     }
@@ -63,6 +64,7 @@ export function createAppointment(data) {
       console.log('post success!');
 
       dispatch(receivePostSuccess(responseJson));
+      hashHistory.push('/scheduleconfirmation');
       return responseJson;
     });
   }

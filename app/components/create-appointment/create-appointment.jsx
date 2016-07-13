@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux';
 import FormField from '../common/form-field/form-field';
 import {createAppointment} from '../../actions/appointments-actions';
+import {hashHistory} from 'react-router';
 
 
 class CreateAppointmentPage extends Component {
@@ -50,19 +51,20 @@ class CreateAppointmentPage extends Component {
     if(this.state.email.indexOf('@') <= -1){
       return {err: 'The email address entered does not contain the @ symbol.'};
     }
-    const alias = this.state.email.split('@')[0];
+    /*const alias = this.state.email.split('@')[0];
     const domain = this.state.email.split('@')[1];
     const domain1 = domain.split('.')[0];
     const domain2 = domain.split('.')[1];
 
     if(alias.length < 3 || domain1.length < 3 || domain2.length < 3){
       return {err: 'The email address entered is not long enough to be recognized.'};
-    }
+    }*/
 
     return {err: ''};
   }
 
   submitAppointment() {
+    console.log('submit');
     const errObj = this.modelIsValid();
     if(errObj){
       this.setState({err: errObj.err});
@@ -76,7 +78,6 @@ class CreateAppointmentPage extends Component {
   render() {
     return (
       <div>
-        <h3>Create an Appointment</h3>
         {this.state.err ?
           <div className="usa-alert usa-alert-error">
             <div className="usa-alert-body">
@@ -92,7 +93,7 @@ class CreateAppointmentPage extends Component {
         <FormField id="input-phone" formKey="phone" label="Mobile Phone Number" validation="phone" handleChange={this.handleChange.bind(this)} />
         <FormField id="input-email" formKey="email" label="Email Address" validation="email" handleChange={this.handleChange.bind(this)} />
 
-        <button id="submitAppointment" onClick={this.submitAppointment.bind(this)}>Create</button>
+        <button id="submitAppointment" onClick={() => hashHistory.push('/scheduleconfirmation')}>Create</button>
       </div>
     )
   }
