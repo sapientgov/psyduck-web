@@ -5,13 +5,15 @@ import createLogger from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import ErrorReducer from '../reducers/error-reducer';
 import ConfigReducer from '../reducers/config-reducer';
+import UserReducer from '../reducers/user-reducer';
 import {Link} from 'react-router';
 import {configureApp} from '../actions/config-actions';
 
 //combine reducers
 const appReducers = combineReducers({
   error: ErrorReducer,
-  config: ConfigReducer
+  config: ConfigReducer,
+  user: UserReducer
 });
 
 //create redux logger
@@ -31,7 +33,7 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <div className="app">
-          <h1>H1 Header</h1>
+          <h1>Scheduler</h1>
             <nav>
               <ul>
                 <li><Link activeClassName="activeLink" to="/">Home</Link></li>
