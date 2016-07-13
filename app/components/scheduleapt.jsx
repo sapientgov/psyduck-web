@@ -29,9 +29,17 @@ export default class ScheduleApt extends Component {
 				<div className="usa-width-one-whole add-hmargin schedule-step">
 					<h3>Select an office.</h3>
 					<select title="Select an Office" name="offices" id="options">
-						<option value="value1">Albany, NY</option>
-						<option value="value2">Boston, MA</option>
-						<option value="value3">Cincinnatti, OH</option>
+						<option value="burlington">Burlington, VT</option>
+						<option value="dallas">Dallas, TX</option>
+						<option value="honolulu">Honolulu, HI</option>
+						<option value="lasvegas">Las Vegas, NV</option>
+						<option value="losangeles">Los Angeles, CA</option>
+						<option value="miami">Miami, FL</option>
+						<option value="neworleans">New Orleans, LA</option>
+						<option value="sanfrancisco">San Francisco, CA</option>
+						<option value="sanjuan">San Juan, PR</option>
+						<option value="stthomas">St. Thomas, VI</option>
+						<option value="washingtondc">Washington, DC</option>
 					</select>
 				</div>
 				<div className="usa-width-one-whole add-hmargin schedule-step">
@@ -57,8 +65,6 @@ export default class ScheduleApt extends Component {
 							<div className="apptSlotCol filled">
 								<p>filled</p>
 							</div>
-							
-							
 						</div> 
 					</div>
 
